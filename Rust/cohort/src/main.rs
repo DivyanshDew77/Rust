@@ -94,3 +94,105 @@
 //         Err(r) => println!("Error while reading file")
 //     }
 // }
+
+// use chrono::{Utc, Local};
+// use dotenv::dotenv;
+// use std::env;
+
+// fn main() {
+//     dotenv().ok();
+//     let utc = Utc::now();
+//     let local_time = Local::now();
+
+//     println!("{}", utc);
+//     println!( "{}", local_time);
+
+//     let lo = env::var("REDIS_ADDRESS").unwrap();
+
+//     println!("{}",lo);
+// }
+
+//Generics and trait bounds
+
+// fn main() {
+//     let s1 = sum(1,2);
+//     let s2 = sum(1.0,2.0);
+// }
+
+// fn sum(a:u32, b:u32) -> u32 {
+//     return a + b;
+// }
+
+// trait Shape {
+//     fn get_area(&self) -> u32;
+// }
+
+// struct Rect {
+//     width : u32,
+//     height : u32
+// }
+
+// impl Shape for Rect{
+//     fn get_area(&self) -> u32 {
+//         &self.width * &self.height
+//     }
+// }
+
+// struct Circle {
+//     radius : u32
+// }
+
+// impl Shape for Circle {
+//     fn get_area(&self) -> u32 {
+//         &self.radius * &self.radius
+//     }
+// }
+
+// fn main() {
+//     let rectangle = Rect {
+//         width: 10,
+//         height : 30
+//     };
+
+//     let circle = Circle {
+//         radius : 10
+//     };
+
+//     println!("The area of rectangle is {}", rectangle.get_area());
+//     println!("The area of circle is {} ", circle.get_area());
+// }
+
+//Macros
+
+// use std::fmt::{write,Display};
+
+
+
+// struct User {
+//     username : String,
+//     age : u32
+// }
+
+// impl Display for User {
+//     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
+//         write!(f, "This is the user struct with age {}", self.age)
+//     }
+// }
+// #[derive(Debug, Copy, Clone)]
+// struct User {
+//     is_male : bool,
+//     age : u32
+// }
+
+// fn main() {
+//     let u = User {
+//         is_male : true,
+//         age : 21
+//     };
+
+//     let u2  = u;
+//     println!("{:?}, {:?}", u, u2);
+// }
+
+fn main() {
+}
