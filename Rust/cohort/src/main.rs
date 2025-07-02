@@ -194,5 +194,77 @@
 //     println!("{:?}, {:?}", u, u2);
 // }
 
-fn main() {
-}
+//Serde
+
+// use serde::{Serialize, Deserialize};
+// use serde_json::Deserializer;
+
+// #[derive(Serialize, Deserialize)]
+// #[derive(Debug)]
+
+// struct User {
+//     username : String,
+//     password : String
+// }
+// fn main() {
+//     let u = User {
+//         username :String::from("Avi"),
+//         password :String::from("helkfkl")
+//     };
+
+//     let serialzed_string = serde_json::to_string(&u);
+
+//     let user_string = serialzed_string.unwrap();
+//     let deserialized: Result<User, serde_json::Error> = serde_json::from_str(&user_string);
+
+//     println!("The serialized string is {} \n The deserialized string is {:?}", user_string, deserialized.unwrap());
+// }
+
+//Borsh
+
+// use borsh::{BorshSerialize, BorshDeserialize};
+
+// #[derive(BorshSerialize, BorshDeserialize, Debug, PartialEq)]
+
+// struct User {
+//     username : String,
+//     password : String
+// }
+
+// fn main() {
+
+//     let u = User {
+//         username : String::from("Harkirtat"),
+//         password : String::from("123123")
+//     };
+//     let mut v = Vec::new();
+
+//     u.serialize(&mut v);
+
+//     print!("{:?}", v);
+
+//     let user = User::try_from_slice(&v).unwrap();
+//     print!("{}, {}",user.username, user.password );
+
+// }
+
+// LifeTimes
+
+//  
+    // let str1 = String::from("Hakrriaijt");
+    // let ans;
+    // {
+    //     let str2 = String::from("jdgkjdfg");
+    //     ans = longest_string(&str2, &str1);
+    //     println!("{}", ans);
+    // }
+    // println!("{}", ans);
+
+// }
+
+// fn longest_string<'a, 'b>(s1 : &'a String, s2: &'b String) -> &'b String{
+//     if s1.len() > s2.len() {
+//         return s1;
+//     }
+//     s2
+// }

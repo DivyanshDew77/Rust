@@ -1,0 +1,1 @@
+fn(serde_json::Deserializer<_>) -> serde_json::Deserializer<_> {<serde_json::Deserializer<_> as From<serde_json::Deserializer<_>>>::from}
